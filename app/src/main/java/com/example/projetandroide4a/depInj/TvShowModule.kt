@@ -1,4 +1,4 @@
-package com.eseo.productapp.di
+package com.example.projetandroide4a.depInj
 
 import com.example.projetandroide4a.model.repository.TvShowRepository
 import com.example.projetandroide4a.model.service.TvShowApi

@@ -21,7 +21,7 @@ fun ProductRow(modifier: Modifier = Modifier) {
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
             .fillMaxSize()
-            .background(Color.LightGray)
+            .background(Color.DarkGray)
     ) {
         Text(
             text = "Pas de série",

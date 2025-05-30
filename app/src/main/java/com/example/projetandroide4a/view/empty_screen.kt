@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.sp
 
 @Preview
 @Composable
-fun ProductRow(modifier: Modifier = Modifier) {
+fun TvShowRow(modifier: Modifier = Modifier) {
     Row(
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,

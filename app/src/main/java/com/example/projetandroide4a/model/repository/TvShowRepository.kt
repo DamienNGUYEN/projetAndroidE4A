@@ -9,11 +9,11 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class TvShowRepository @Inject constructor(
-    private val TvShowApi: TvShowApi
+    private val tvShowApi: TvShowApi
 ) {
 
     fun getTvShowsFlow(): Flow<List<TvShow>> = flow {
-        emit(TvShowApi.getTvShowResponse())
+        emit(tvShowApi.getTvShowResponse().tvShows)
     }.catch { e ->
         Log.e("TvShowRepository", "Error fetching TvShows", e)
         emit(emptyList())

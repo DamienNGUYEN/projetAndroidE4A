@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projetandroide4a.model.data.TvShow
 import com.example.projetandroide4a.model.repository.TvShowRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -11,8 +12,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class TvShowViewModel @Inject constructor(
-    private val TvShowRepository: TvShowRepository
+    private val tvShowRepository: TvShowRepository
 ) : ViewModel() {
     private val _tvShows = MutableStateFlow<List<TvShow>>(emptyList())
     val tvShows : StateFlow<List<TvShow>> = _tvShows
@@ -22,7 +24,7 @@ class TvShowViewModel @Inject constructor(
     }
 
     private fun getAllTvShows() = viewModelScope.launch(Dispatchers.IO) {
-        TvShowRepository.getTvShowsFlow().collectLatest {
+        tvShowRepository.getTvShowsFlow().collectLatest {
             _tvShows.value = it
         }
     }

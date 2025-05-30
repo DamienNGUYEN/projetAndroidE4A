@@ -1,11 +1,12 @@
 package com.example.projetandroide4a.model.service
 
-import com.example.projetandroide4a.model.data.TvShow
+import com.example.projetandroide4a.model.data.TvShows
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface TvShowApi {
 
-    @GET("TvShows")
-    suspend fun getTvShowResponse(): List<TvShow>
+    @GET("most-popular")
+    suspend fun getTvShowResponse(@Query("page") page: Int = 1): TvShows
 
 }

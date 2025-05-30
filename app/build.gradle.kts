@@ -58,7 +58,7 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.coil.network.okhttp)
     implementation (libs.hilt.android)
-    implementation (libs.hilt.compiler)
+    //implementation (libs.hilt.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
